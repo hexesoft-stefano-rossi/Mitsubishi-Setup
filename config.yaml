@@ -1,0 +1,75 @@
+﻿# Nome dell'Add-on
+name: "Hexesoft Mitsubishi Bridge"
+# Versione del software
+version: "1.0.2"
+# Identificativo interno
+slug: "hexesoft_mitsubishi"
+# Descrizione estesa
+description: "Bridge Mitsubishi con configurazione grafica integrata in Home Assistant."
+# Architetture supportate
+arch:
+  - aarch64
+  - amd64
+# Permessi di sistema
+init: false
+# Mappatura cartelle
+map:
+  - config:rw
+
+# VALORI DI DEFAULT INIZIALI
+options:
+  mitsubishi:
+    host: ""
+    polling_interval: 10
+    operating_mode: "integrated"
+    bticino_base_topic: "bticino_bridge"
+    heating_boost_delta: 3.0
+    cooling_boost_delta: 0.0
+  # NUOVO CASSETTO "DISPOSITIVI"
+  devices:
+    air_conditioners: []
+    hydronics: []
+  mqtt:
+    host: ""
+    port: 1883
+    username: ""
+    password: ""
+    base_topic: "mitsubishi_bridge"
+    discovery_prefix: "homeassistant"
+  # NUOVO CASSETTO "AVANZATE"
+  advanced:
+    log_level: "debug"
+
+# SCHEMA GRAFICO (Qui diciamo ad HA di creare i menu a tendina)
+schema:
+  mitsubishi:
+    host: str
+    polling_interval: int(5,)
+    operating_mode: list(standard|integrated)
+    bticino_base_topic: str
+    heating_boost_delta: float
+    cooling_boost_delta: float
+  
+  # DEFINIZIONE DEL CASSETTO DISPOSITIVI
+  devices:
+    air_conditioners:
+      - name: str
+        id: str
+        bticino_zone: str?
+        supports_dry: bool?
+    hydronics:
+      - name: str
+        id: str
+        type: list(HOT_WATER|HEATING)
+      
+  mqtt:
+    host: str
+    port: port
+    username: str?
+    password: password?
+    base_topic: str
+    discovery_prefix: str
+    
+  # DEFINIZIONE DEL CASSETTO AVANZATE
+  advanced:
+    log_level: list(debug|info|warning|error)
