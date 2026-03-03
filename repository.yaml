@@ -1,8 +1,8 @@
 ﻿# Nome dell'archivio che apparirà in Home Assistant
-name: "Hexesoft Mitsubishi Add-ons"
+name: "Hexesoft Mitsubishi"
 
 # URL del tuo repository GitHub
-url: "https://github.com/hexesoft-stefano-rossi/Mitsubishi-Setup"
+url: "https://github.com/hexesoft-stefano-rossi/home-assistant-mitsubishi"
 
 # Nome del manutentore del progetto
 maintainer: "Stefano Rossi"

@@ -1,22 +1,14 @@
-﻿# Nome dell'Add-on
-name: "Hexesoft Mitsubishi Bridge"
-# Versione del software
-version: "1.0.5"
-# Identificativo interno
+﻿name: "Hexesoft Mitsubishi"
+description: "Bridge Mitsubishi in Home Assistant"
+version: "1.0.7"
 slug: "hexesoft_mitsubishi"
-# Descrizione estesa
-description: "Bridge Mitsubishi in Home Assistant."
-# Architetture supportate
 arch:
   - aarch64
   - amd64
-# Permessi di sistema
 init: false
-# Mappatura cartelle
 map:
   - config:rw
 
-# VALORI DI DEFAULT INIZIALI (Puliti per l'utente finale)
 options:
   mitsubishi:
     host: ""
@@ -26,11 +18,9 @@ options:
     heating_boost_delta: 3.0
     cooling_boost_delta: 0.0
 
-  # GRUPPO CONDIZIONATORI (Stile BTicino: lista vuota)
   air_conditioners:
     devices: []
 
-  # GRUPPO IDRONICI (Stile BTicino: lista vuota)
   hydronics:
     devices: []
 
@@ -45,7 +35,6 @@ options:
   advanced:
     log_level: "info"
 
-# SCHEMA GRAFICO
 schema:
   mitsubishi:
     host: str
